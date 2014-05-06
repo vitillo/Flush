@@ -109,6 +109,9 @@ int main(int argc, char* argv[])
 			DisplayError(ret);
 			return -1;
 		}
+	} else {
+		printf("Failure to set required privileges\n");
+		return -1;
 	}
 
 	if (SetPrivilege(processToken, L"SeProfileSingleProcessPrivilege", TRUE))
@@ -121,6 +124,9 @@ int main(int argc, char* argv[])
 			DisplayError(ret);
 			return -1;
 		}
+	} else {
+		printf("Failure to set required privileges\n");
+		return -1;
 	}
 
 	return 0;
